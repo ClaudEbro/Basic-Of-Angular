@@ -25,10 +25,10 @@
       "id": 7
     },
     {
-      "name": "Castel",
+      "id": 9,
+      "name": "Fork",
       "price": "300",
-      "checked": true,
-      "id": 9
+      "checked": false
     },
     {
       "name": "Battery",
@@ -41,6 +41,60 @@
       "price": "3200",
       "checked": false,
       "id": 11
+    },
+    {
+      "name": "Book",
+      "price": "2500",
+      "checked": true,
+      "id": 12
+    },
+    {
+      "name": "Minus",
+      "price": "5000",
+      "checked": false,
+      "id": 13
+    },
+    {
+      "name": "Bag",
+      "price": "5000",
+      "checked": false,
+      "id": 14
+    },
+    {
+      "name": "Shoes",
+      "price": "3000",
+      "checked": true,
+      "id": 15
+    },
+    {
+      "name": "Shirt",
+      "price": "2000",
+      "checked": true,
+      "id": 16
+    },
+    {
+      "name": "T-Shirt",
+      "price": "2000",
+      "checked": false,
+      "id": 17
+    },
+    {
+      "name": "Tie",
+      "price": "2000",
+      "checked": true,
+      "id": 18
+    },
+    {
+      "name": "Cat",
+      "price": "2500",
+      "checked": true,
+      "id": 19
+    },
+    {
+      "name": "Ball",
+      "price": "350",
+      "checked": false,
+      "id": 21
     }
   ]
 }
