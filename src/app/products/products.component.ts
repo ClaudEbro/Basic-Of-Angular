@@ -5,6 +5,7 @@ import {ProductService} from "../services/product.service";
 import {Product} from "../model/product.model";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
+import {AppStateService} from "../services/app-state.service";
 
 
 @Component({
@@ -14,15 +15,9 @@ import {Router} from "@angular/router";
 })
 export class ProductsComponent implements OnInit {
 
-  public products : Array<Product> = []; // Or products$! : Observable<Array<Product>>;
-  public keyword : string = "";
-  totalPages: number =0;
-  pageSize: number = 3;
-  currentPage: number = 1;
-
-
   constructor(private productService : ProductService,
-              private router: Router) {
+              private router: Router,
+              public appState: AppStateService) {
   }
 
   ngOnInit() {
@@ -31,18 +26,40 @@ export class ProductsComponent implements OnInit {
   }
 
   searchProducts(){
-    this.productService.searchProducts(this.keyword, this.currentPage,this.pageSize)
+
+   /* this.appState.setProductState({
+      status : "LOADING"
+    });*/
+
+    this.productService.searchProducts(
+      this.appState.productsState.keyword,
+      this.appState.productsState.currentPage,
+      this.appState.productsState.pageSize)
       .subscribe({
         next : (resp) => {
-          this.products = resp.body as Product[];
+          let products = resp.body as Product[];
           let totalProducts: number = parseInt(resp.headers.get('x-total-count')!);
-          this.totalPages = Math.floor(totalProducts/this.pageSize);
-          if(totalProducts % this.pageSize !=0){
-            this.totalPages = this.totalPages+1;
+
+          //this.appState.productsState.totalProducts = totalProducts;
+
+          let totalPages = Math.floor(totalProducts/this.appState.productsState.pageSize);
+
+          if(totalProducts % this.appState.productsState.pageSize !=0){
+            ++totalPages;
           }
+
+          this.appState.setProductState({
+            products : products,
+            totalProducts : totalProducts,
+            totalPages: totalPages,
+            status : "LOADED"
+          })
         },
         error: err => {
-          console.log(err)
+          this.appState.setProductState({
+            status : "ERROR",
+            errorMessage : err
+          })
         }
       })
 
@@ -65,14 +82,16 @@ export class ProductsComponent implements OnInit {
       .subscribe( {
         next : data => {
           //this.getProduct();
-          this.products = this.products.filter(p=>p.id!=product.id);
+          //this.appState.productsState.products = this.appState.productsState.products.filter((p:any)=>p.id!=product.id);
+
+          this.searchProducts(); //To have total Product in the dashboard after deleting a product without loading the page.
         }
       });
   }
 
 
   handleGoToPage(page: number) {
-    this.currentPage = page;
+    this.appState.productsState.currentPage = page;
     this.searchProducts() ;
   }
 

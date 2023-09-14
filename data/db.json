@@ -10,13 +10,7 @@
       "id": 3,
       "name": "SmartPhone",
       "price": 3000,
-      "checked": true
-    },
-    {
-      "name": "Book",
-      "price": "520",
-      "checked": true,
-      "id": 4
+      "checked": false
     },
     {
       "name": "Manga",
@@ -57,7 +51,7 @@
     {
       "name": "Bag",
       "price": "5000",
-      "checked": false,
+      "checked": true,
       "id": 14
     },
     {
@@ -95,6 +89,18 @@
       "price": "350",
       "checked": false,
       "id": 21
+    },
+    {
+      "id": 22,
+      "name": "Magazine",
+      "price": "300",
+      "checked": true
+    },
+    {
+      "name": "Printer",
+      "price": "78000",
+      "checked": true,
+      "id": 23
     }
   ]
 }
