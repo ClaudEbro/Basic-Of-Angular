@@ -9,9 +9,9 @@ import {LoadingService} from "../services/loading.service";
 })
 export class NavbarComponent {
   actions: Array<any> = [
-    {title: "Home", "route":"/home", icon:"house"},
-    {title: "Products", "route":"/products", icon:"search"},
-    {title: "New Product", "route":"/newProduct", icon:"safe"}
+    {title: "Home", "route":"/admin/home", icon:"house"},
+    {title: "Products", "route":"/admin/products", icon:"search"},
+    {title: "New Product", "route":"/admin/newProduct", icon:"safe"}
   ];
   currentAction: any;
 
