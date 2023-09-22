@@ -1,4 +1,31 @@
 {
+  "users": [
+    {
+      "id": "user1",
+      "password": "MTIzNA==",
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4ODgvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwiZmlyc3RuYW1lIjoiQ2xhdWRlIiwibGFzdG5hbWUiOiJFQlJPVFRJRSIsImVtYWlsICI6ImNsYXVkZUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIl19.zHS5LKKpwglevbrMzdyN1T_LxKGb6e51qkzKzX8R_5I"
+    },
+    {
+      "id": "user2",
+      "password": "MTIzNA==",
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4ODgvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwiZmlyc3RuYW1lIjoiQ2xhdWRlIiwibGFzdG5hbWUiOiJFQlJPVFRJRSIsImVtYWlsICI6ImNsYXVkZUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIl19.EDVc1lkyYcbfTT7GmnMWX1J2ArJCqpX3Y7L1S0MQwS4"
+    },
+    {
+      "id": "admin",
+      "password": "MTIzNA==",
+      "roles": [
+        "USER",
+        "ADMIN"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4ODgvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwiZmlyc3RuYW1lIjoiQ2xhdWRlIiwibGFzdG5hbWUiOiJFQlJPVFRJRSIsImVtYWlsICI6ImNsYXVkZUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iXX0.T7qr1GykKlfE9vVNuks3jTVIgR1V1HD2sSD5yJsjozQ"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -63,7 +90,7 @@
     {
       "name": "Shirt",
       "price": "2000",
-      "checked": true,
+      "checked": false,
       "id": 16
     },
     {
@@ -101,6 +128,12 @@
       "name": "Printer",
       "price": "7800",
       "checked": true
+    },
+    {
+      "name": "Pocket",
+      "price": "5000",
+      "checked": false,
+      "id": 24
     }
   ]
 }
